@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/shoppingcart.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="welcome">
+            <h1>Welcome, {{ email }}</h1>
+        </div>
+        <div class="nav">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('booking') }}">Booking</a>
+        </div>
+    </div>
+
+    <div class="cart-summary">
+        <table border="2" align="center" class="cart-table" cellspacing="10" cellpadding="10">
+            <tr>
+                <th >Movie Name</th>
+                <th>Ticket Price</th>
+                <th>Quantity</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td class="highlight" >{{ row[0] }}</td> <!-- Movie Name -->
+                <td class="highlight">{{ row[1] }}</td> <!-- Ticket Price -->
+                <td class="highlight">{{ row[2] }}</td> <!-- Quantity -->
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="payment-section">
+        <h1>Total Payment: ₹{{ total }}</h1>
+        <p>Pay now by clicking the button below:</p>
+    </div>
+
+    <div class="payment-button">
+        <button id="rzp-button1">PAY NOW</button>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script>
+            var options = {
+                "key": "rzp_test_aM892uPmKeLaL6",
+                "amount": "{{ total_paise }}", 
+                "currency": "INR",
+                "name": "Movie Booking",
+                "description": "Movie Ticket Purchase",
+                "image": "https://files.oaiusercontent.com/file-XAHAFmthZmm4VfQvm81qXF?se=2025-01-02T16%3A33%3A50Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D45fbfbfd-cc09-40dc-b86e-b1006d42aef2.webp&sig=Wq1sRBbzHSZlzfTt/gGRiCM8ILlBRKTMicy4b8fxbME%3D", // Replace with your logo URL
+                "order_id": "{{ order.id }}", 
+                "handler": function (response) {
+                    var form = document.createElement('form');
+                    form.action = "/success"; 
+                    form.method = "POST";
+
+                    form.innerHTML = ` 
+                        <input type="hidden" name="razorpay_payment_id" value="${response.razorpay_payment_id}">
+                        <input type="hidden" name="razorpay_order_id" value="${response.razorpay_order_id}">
+                        <input type="hidden" name="razorpay_signature" value="${response.razorpay_signature}">
+
+                        <!-- Append other required data -->
+                        <input type="hidden" name="total_price" value="{{ total }}">
+                        <input type="hidden" name="email" value="{{ email }}">
+                        <input type="hidden" name="seat_ids" value="{{ seat_ids }}">
+                         {% for row in data %}
+                        <input type="hidden" name="movie_name" value="{{ row[0] }}">
+                        {% endfor %}
+                        <input type="hidden" name="date" value="{{ show_date }}">
+                        <input type="hidden" name="time" value="{{ show_time }}">
+                        <input type="hidden" name="screen_id" value="{{ screen_id }}">
+                    `;
+
+                    document.body.appendChild(form);
+                    form.submit();
+                },
+                "prefill": {
+                    "name": "{{ user_name }}",
+                    "email": "{{ email }}", 
+                    "contact": "9573610857" 
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+
+            var rzp1 = new Razorpay(options);
+            document.getElementById('rzp-button1').onclick = function (e) {
+                rzp1.open();
+                e.preventDefault();
+            };
+        </script>
+    </div>
+</body>
+</html>

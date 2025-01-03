@@ -1,0 +1,81 @@
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: cursive;
+    height: 100vh;
+}
+
+h2 {
+    text-align: center;
+}
+
+h2::first-letter {
+    font-size: 3rem;
+    font-weight: 200;
+    color: palevioletred;
+}
+
+h2::after {
+    content: ':)';
+    color: palevioletred;
+}
+
+.container {
+    background-color: white;
+    box-shadow: 10px 10px 5px gray;
+    padding: 25px;
+    display: grid;
+    grid-template-rows: auto;
+    margin-top: 100px;
+    width: 350px;
+    border-radius: 10px;
+}
+
+.container label {
+    margin: 15px 0 5px;
+    color: black;
+    font-weight: bold;
+}
+
+.container input {
+    border-radius: 5px;
+    height: 25px;
+    width: 100%;
+    border: 1px solid gainsboro;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.container button {
+    background-color: palevioletred;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.container button:hover {
+    background-color: #b55f97;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register-link a {
+    text-decoration: none;
+    color: palevioletred;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

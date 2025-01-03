@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking - BookMyShow Style</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="{{ url_for('base') }}">Movie<span>Booking</span></a>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('booking') }}">Movies</a></li>
+                    <li><a href="{{ url_for('events') }}">Events</a></li>
+                    <li><a href="{{ url_for('plays') }}">Plays</a></li>
+                    <li><a href="{{ url_for('sports') }}">Sports</a></li>
+                    <li><a href="{{ url_for('activities') }}">Activities</a></li>
+                    <li><a href="{{ url_for('contactus') }}">Contactus</a></li>
+                    <li><a href="{{ url_for('enquirydata') }}">EnquiryDetails</a></li>
+                    <li><a href="{{ url_for('aboutus') }}">Aboutus</a></li>
+                    <div class="btn btn-outline-success my-2 my-sm-0"><a href="{{url_for('logout')}}">logout</a></div>
+                </ul>
+            </nav>
+            <div class="user-options">
+                <a href="{{ url_for('login') }}" class="btn">Login</a>
+                <a href="{{ url_for('signup') }}" class="btn">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-container">
+            <h1>Experience Movies Like Never Before</h1>
+            <p>Book tickets for the latest movies, events, and more at your favorite locations!</p>
+            <form action="{{ url_for('search') }}" method="GET" class="search-bar">
+                <input type="text" name="q" placeholder="Search for movies, events, plays..." required>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </section>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1735283429927_hyderabad1.jpg"
+                    class="d-block w-100 img-fluid" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1726036566435_playcardnewweb.jpg"
+                    class="d-block w-100 img-fluid" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1735281893062_javedali1240x300.jpg"
+                    class="d-block w-100 img-fluid" alt="Slide 3">
+            </div>
+       
+            
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <section id="now-showing" class="section">
+        <div class="container">
+            <h2>Explore the latest blockbusters and classic films</h2>
+            <div class="movies-container">
+                <!-- Movie 1 - Hindi -->
+                <div class="movie-card">
+                    <img src="{{ url_for('static', filename='images/prabas.jpg') }}" alt="Rajasaab">
+                    <div>
+                        <p>Name: <b>Rajasaab</b><br>Price: <b>350/-</b></p>
+                    </div>
+                    <div>
+                      
+                        <form action="{{ url_for('seats') }}" method="POST">
+                            <input type="hidden" name="movie_name" value="Rajasaab">
+                            <input type="hidden" name="price" value="350">
+                            <input type="submit" value="Book Now">
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Movie 2 - Telugu -->
+                <div class="movie-card">
+                    <img src="{{ url_for('static', filename='images/pushpa 22.jpg') }}" alt="Pushpa">
+                    <div>
+                        <p>Name: <b>Pushpa</b><br>Price: <b>300/-</b></p>
+                    </div>
+                    <div>
+                       
+                        <form action="{{ url_for('seats') }}" method="POST">
+                            <input type="hidden" name="movie_name" value="Pushpa2">
+                            <input type="hidden" name="price" value="300">
+                            <input type="submit" value="Book Now">
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Movie 3 - Tamil (Kanguva) -->
+                <div class="movie-card">
+                    <img src="{{url_for('static',filename='images/kanguva.jpg')}}" alt="Kanguva">
+                    <div>
+                        <p>Name: <b>Kanguva</b><br>Price: <b>250/-</b></p>
+                    </div>
+                    <div>
+                       
+                        <form action="{{ url_for('seats') }}" method="POST">
+                            <input type="hidden" name="movie_name" value="Kanguva">
+                            <input type="hidden" name="price" value="250">
+                            <input type="submit" value="Book Now">
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Movie 4 - English (Premalu) -->
+                <div class="movie-card">
+                    <img src="https://m.media-amazon.com/images/M/MV5BY2Q2YzEzNGUtZWYxYS00YTlhLTgyOTctYTgwNWIxZGE0MDJjXkEyXkFqcGc@.V1.jpg"
+                        alt="Premalu">
+                    <div>
+                        <p>Name: <b>Premalu</b><br>Price: <b>235/-</b></p>
+                    </div>
+                    <div>
+                       
+                        <form action="{{ url_for('seats') }}" method="POST">
+                            <input type="hidden" name="movie_name" value="Premalu">
+                            <input type="hidden" name="price" value="235">
+                            <input type="submit" value="Book Now">
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Movie 5 - Hindi (Fighter) -->
+                <div class="movie-card">
+                    <img src="{{ url_for('static', filename='images/fighter.jpg') }}" alt="Fighter">
+                    <div>
+                        <p>Name: <b>Fighter</b><br>Price: <b>200/-</b></p>
+                    </div>
+                    <div>
+                        
+                        <form action="{{ url_for('seats') }}" method="POST">
+                            <input type="hidden" name="movie_name" value="Fighter">
+                            <input type="hidden" name="price" value="200">
+                            <input type="submit" value="Book Now">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+        <div class="container">
+            <h2>Check out exciting events happening near you</h2>
+
+            <!-- Add the events-container class with flexbox styles -->
+            <div class="events-container">
+                <!-- Event 1 - Music Festival -->
+                <div class="event-card">
+                    <img src="https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Music Festival">
+                    <div class="event-details">
+                        <h2>Music Festival</h2>
+                        <p>Join the best music festival in town.</p>
+                        <p class="price">₹ 1200 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Event 2 - Comedy Show -->
+                <div class="event-card">
+                    <img src="https://images.pexels.com/photos/3071456/pexels-photo-3071456.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Comedy Show">
+                    <div class="event-details">
+                        <h2>Comedy Show</h2>
+                        <p> Laugh your heart out at this hilarious comedy event! </p>
+                        <p class="price">₹ 300 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Event 3 - Art Exhibition -->
+                <div class="event-card">
+                    <img src="https://images.pexels.com/photos/13473853/pexels-photo-13473853.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Art Exhibition">
+                    <div class="event-details">
+                        <h2>Art Exhibition</h2>
+                        <p>Experience beautiful works of art from talented artists.</p>
+                        <p class="price">₹ 650 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Event 4 - Dance Show -->
+                <div class="event-card">
+                    <img src="https://images.pexels.com/photos/175658/pexels-photo-175658.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Dance Show">
+                    <div class="event-details">
+                        <h2>Dance Show</h2>
+                        <p>Experience the rhythm, energy, and artistry at our mesmerizing Dance Show!</p>
+                        <p class="price">₹ 700 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Event 5 - Food Festival -->
+                <div class="event-card">
+                    <img src="https://images.pexels.com/photos/5778895/pexels-photo-5778895.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Food Festival">
+                    <div class="event-details">
+                        <h2>Food Festival</h2>
+                        <p>Indulge in the best cuisines from around the world!</p>
+                        <p class="price">₹ 840 onwards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="plays" class="section">
+        <div class="container">
+            <h2>Experience the magic of live theater performances</h2>
+
+            <div class="plays-container">
+                <!-- Play 1 - Hamlet (English) -->
+                <div class="play-card">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMGEyNzVjNjktZjY5Zi00NWU4LWE2NDgtYjdhNDdlZDk5NDIyXkEyXkFqcGc@._V1_.jpg"
+                        alt="Hamlet">
+                    <div class="play-details">
+                        <h2>Hamlet</h2>
+                        <p>Shakespeare's timeless tragedy</p>
+                        <p class="price">₹ 300 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Play 2 - Romeo and Juliet (English) -->
+                <div class="play-card">
+                    <img src="https://images.moviesanywhere.com/6bc84e1167589bc954067c9a8771a0b5/ca006d14-16cc-4221-b91b-fc77566a9be1.jpg"
+                        alt="Romeo and Juliet">
+                    <div class="play-details">
+                        <h2>Romeo and Juliet</h2>
+                        <p>Experience the tragic romance</p>
+                        <p class="price">₹ 500 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Play 3 - Midsummer Night's Dream (English) -->
+                <div class="play-card">
+                    <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/book/z/x/o/a-midsummer-night-s-dream-original-imagwhxdupgvkceg.jpeg?q=90&crop=false"
+                        alt="Midsummer Night's Dream">
+                    <div class="play-details">
+                        <h2>Midsummer Night's Dream</h2>
+                        <p>Shakespeare's magical comedy</p>
+                        <p class="price">₹ 420 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Play 4 - Laila Majnu (Hindi) -->
+                <div class="play-card">
+                    <img src="https://i.pinimg.com/originals/f4/b5/7c/f4b57c6ee3adc7861447e9eb6f0c1739.jpg"
+                        alt="Laila Majnu">
+                    <div class="play-details">
+                        <h2>Layla and Majnun</h2>
+                        <p><span>Experience the tragic love story</span></p>
+                        <p class="price">₹ 370 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Play 5 - The Vow (Telugu) -->
+                <div class="play-card">
+                    <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC/et00424656-pjepqbxyfg-portrait.jpg"
+                        alt="Boothakaalam">
+                    <div class="play-details">
+                        <h2>Butakalam</h2>
+                        <p><span>Time-based story and reflections</span></p>
+                        <p class="price">₹ 460 onwards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="sports" class="section">
+        <div class="container">
+            <h2>Stay updated on sports matches and activities</h2>
+            <div class="sports-container">
+                <!-- Sport 1 - Soccer Match -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/3684122/pexels-photo-3684122.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Soccer Match">
+                    <div>
+                        <p>Name: <b>Soccer Match</b></p>
+                        <p>Details: <b>Witness the excitement of a live soccer game, as top teams compete for glory!</b></p>
+                        <p class="price">₹ 1100 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Sport 2 - Basketball Tournament -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/3755448/pexels-photo-3755448.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Basketball Tournament">
+                    <div>
+                        <p>Name: <b>Basketball Tournament</b></p>
+                        <p>Details: <b>Get ready for an action-packed basketball tournament with top teams!</b></p>
+                        <p class="price">₹ 1250 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Sport 3 - Tennis Championship -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/5741293/pexels-photo-5741293.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Tennis Championship">
+                    <div>
+                        <p>Name: <b>Tennis Championship</b></p>
+                        <p>Details: <b>Experience world-class tennis as athletes face off in an intense championship match.</b></p>
+                        <p class="price">₹ 1370 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Sport 4 - Rugby Match -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/3624737/pexels-photo-3624737.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Rugby Match">
+                    <div>
+                        <p>Name: <b>Rugby Match</b></p>
+                        <p>Details: <b>Feel the adrenaline rush as top teams go head-to-head in a high-contact game.</b></p>
+                        <p class="price">₹ 1500 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Sport 5 - Volleyball Tournament -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/6203570/pexels-photo-6203570.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Volleyball Tournament">
+                    <div>
+                        <p>Name: <b>Volleyball Tournament</b></p>
+                        <p>Details: <b>Join us for an exciting volleyball tournament with teams!</b></p>
+                        <p class="price">₹ 1340 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Sport 6 - Cricket Match -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/2799556/pexels-photo-2799556.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Cricket Match">
+                    <div>
+                        <p>Name: <b>Cricket Match</b></p>
+                        <p>Details: <b>Witness the drama and excitement of a live cricket match with top players!</b></p>
+                        <p class="price">₹ 2000 onwards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities" class="section">
+        <div class="container">
+            <h2>Engage in exciting activities for fun and relaxation</h2>
+            <div class="activities-container">
+                <!-- Activity 1 - Yoga Class -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.pexels.com/photos/8437076/pexels-photo-8437076.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Yoga Class">
+                    </div>
+                    <div class="activity-details">
+                        <h3>Yoga Class</h3>
+                        <p>Relax and rejuvenate with a guided yoga session. </p>
+                        <p class="price">₹ 500 onwards</p>
+                    </div>
+                </div>
+                
+                <!-- Activity 2 - Adventure Trekking -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.pexels.com/photos/6683842/pexels-photo-6683842.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Adventure Trekking">
+                    </div>
+                    <div class="activity-details">
+                        <h3>Adventure Trekking</h3>
+                        <p>challenge yourself on a thrilling trek.</p>
+                        <p class="price">₹ 900 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Activity 3 - Pottery Workshop -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://img.freepik.com/free-photo/portrait-man-working-pottery-stoneware_23-2151686526.jpg" alt="Pottery Workshop">
+                    </div>
+                    <div class="activity-details">
+                        <h3>Pottery Workshop</h3>
+                        <p>Unleash your creativity and craft beautiful pottery pieces. </p>
+                        <p class="price">₹ 390 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Activity 4 - Cooking Class -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.pexels.com/photos/10260560/pexels-photo-10260560.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cooking Class">
+                    </div>
+                    <div class="activity-details">
+                        <h3>Cooking Class</h3>
+                        <p>Learn to cook delicious dishes with expert guidance. </p>
+                        <p class="price">₹ 1100  onwards</p>
+                    </div>
+                </div>
+
+                <!-- Activity 5 - Art Painting Session -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.pexels.com/photos/6925360/pexels-photo-6925360.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Art Painting Session">
+                    </div>
+                    <div class="activity-details">
+                        <h3>Art Painting Session</h3>
+                        <p>Immerse yourself in colors and express your artistic vision. </p>
+                        <p class="price">₹ 950 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Activity 6 - Fitness Bootcamp -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://www.shutterstock.com/image-photo/group-men-women-exercising-kettlebell-600nw-1221827803.jpg" alt="Fitness Bootcamp">
+                    </div>
+                    <div class="activity-details">
+                        <h3>Fitness Bootcamp</h3>
+                        <p>Join an energetic workout session</p>
+                        <p class="price">₹ 1500 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Activity 7 - Dance Workshop -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.pexels.com/photos/18183892/pexels-photo-18183892/free-photo-of-man-and-woman-in-traditional-clothing-dancing-on-the-street.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Dance Workshop">
+                    </div>
+                    <div class="activity-details">
+                        <h3>Dance Workshop</h3>
+                        <p>Feel the rhythm and master your moves at a fun-filled dance workshop.</p>
+                        <p class="price">₹ 1000 onwards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+<footer>
+    <p>&copy; 2024 BookMyShow. All rights reserved by MANTIPALLY SAI RAJU</p>
+    <p>Follow us on:
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+    </p>
+</footer>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plays</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plays.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Upcoming Plays</h1>
+        <p>Discover the best plays in multiple languages!</p>
+        <div class="nav-right">
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+    </header>
+
+    <section id="plays" class="section">
+        <div class="container">
+            <h2>Experience the magic of live theater performances</h2>
+
+            <div class="plays-container">
+                <!-- Play 1 - Hamlet (English) -->
+                <div class="play-card">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMGEyNzVjNjktZjY5Zi00NWU4LWE2NDgtYjdhNDdlZDk5NDIyXkEyXkFqcGc@._V1_.jpg"
+                        alt="Hamlet">
+                    <div class="play-details">
+                        <h2>Hamlet</h2>
+                        <p>Shakespeare's timeless tragedy</p>
+                        <p class="price">₹ 300 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Play 2 - Romeo and Juliet (English) -->
+                <div class="play-card">
+                    <img src="https://images.moviesanywhere.com/6bc84e1167589bc954067c9a8771a0b5/ca006d14-16cc-4221-b91b-fc77566a9be1.jpg"
+                        alt="Romeo and Juliet">
+                    <div class="play-details">
+                        <h2>Romeo and Juliet</h2>
+                        <p>Experience the tragic romance</p>
+                        <p class="price">₹ 500 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Play 3 - Midsummer Night's Dream (English) -->
+                <div class="play-card">
+                    <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/book/z/x/o/a-midsummer-night-s-dream-original-imagwhxdupgvkceg.jpeg?q=90&crop=false"
+                        alt="Midsummer Night's Dream">
+                    <div class="play-details">
+                        <h2>Midsummer Night's Dream</h2>
+                        <p>Shakespeare's magical comedy</p>
+                        <p class="price">₹ 420 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Play 4 - Laila Majnu (Hindi) -->
+                <div class="play-card">
+                    <img src="https://i.pinimg.com/originals/f4/b5/7c/f4b57c6ee3adc7861447e9eb6f0c1739.jpg"
+                        alt="Laila Majnu">
+                    <div class="play-details">
+                        <h2>Layla and Majnun</h2>
+                        <p><span>Experience the tragic love story</span></p>
+                        <p class="price">₹ 370 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Play 5 - The Vow (Telugu) -->
+                <div class="play-card">
+                    <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC/et00424656-pjepqbxyfg-portrait.jpg"
+                        alt="Boothakaalam">
+                    <div class="play-details">
+                        <h2>Butakalam</h2>
+                        <p><span>Time-based story and reflections</span></p>
+                        <p class="price">₹ 460 onwards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKING</title>
+    <link rel="stylesheet" href="shopping.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/booking.css')}}">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Welcome {{user_name }}</h1>
+        <p>{{mail}}</p>
+
+        <div class="nav-right">
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+    </div>
+    <div class="categories">
+        <a href="#telugu">Telugu</a>
+        <a href="#hindi">Hindi</a>
+        <a href="#english">English</a>
+        <a href="#tamil">Tamil</a>
+        <a href="#malayalam">Malayalam</a>
+        <a href="#kannada">Kannada</a>
+
+    </div>
+
+    <!-- item-1-->
+    <br>
+    <h2 align="center" style="color: black; font-family: cursive;">Telugu</h2>
+    <br>
+    <div class="roses" id="telugu">
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/prabas.jpg')}}" alt="rose-1">
+            <div>
+                <p>Name: <b>Rajasaab</b><br>price: <b>350/-</b></p>
+            </div>
+            <div>
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Rajasaab">
+                    <input type="hidden" name="price" value="350">
+                    <input type="submit" value="Book Now">
+                </form>
+
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/pushpa 22.jpg')}}" alt="rose-2">
+            <div>
+                <p>Name: <b>Pushpa</b><br>price: <b>300/-</b></p>
+            </div>
+            <div>
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="pushpa2">
+                    <input type="hidden" name="price" value="300">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/Sankranthikivas.avif')}}" alt="rose-3">
+            <div>
+                <p>Name: <b>Sankranthiki Vasthunnam</b><br>price: <b>250/-</b></p>
+            </div>
+            <div>
+
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Sankranthiki Vasthunnam">
+                    <input type="hidden" name="price" value="250">
+                    <input type="submit" value="Book Now">
+                </form>
+
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/Naga-Chaitanya-Thandel-Movie-First-Look-Poster-HD.jpg')}}"
+                alt="rose-4">
+            <div>
+                <p>Name: <b>Thandel</b><br>price: <b>270/-</b></p>
+            </div>
+            <div>
+
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Thandel">
+                    <input type="hidden" name="price" value="270">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/viswambara.jpg')}}" alt="rose-5">
+            <div>
+                <p>Name: <b>Vishwambhara</b><br>price: <b>300/-</b></p>
+            </div>
+            <div>
+               
+                    <form action="{{ url_for('seats') }}" method="POST">
+                        <input type="hidden" name="movie_name" value="Vishwambhara">
+                        <input type="hidden" name="price" value="300">
+                        <input type="submit" value="Book Now">
+                    </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- item-2-->
+
+    <br>
+    <h2 align="center" style="color: black; font-family: cursive;">Hindi</h2>
+    <br>
+    <div class="roses" id="hindi">
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/fighter.jpg')}}" alt="tulip-1">
+            <div>
+                <p>Name: <b>Fighter</b><br>price: <b>200/-</b></p>
+            </div>
+            <div>
+                
+                    <form action="{{ url_for('seats') }}" method="POST">
+                        <input type="hidden" name="movie_name" value="Fighter">
+                        <input type="hidden" name="price" value="200">
+                        <input type="submit" value="Book Now">
+                    </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/dunki.jpg')}}" alt="tulip-2">
+            <div>
+                <p>Name: <b>Dunki</b><br>price: <b>250/-</b></p>
+            </div>
+            <div>
+                
+                    <form action="{{ url_for('seats') }}" method="POST">
+                        <input type="hidden" name="movie_name" value="Dunki">
+                        <input type="hidden" name="price" value="250">
+                        <input type="submit" value="Book Now">
+                    </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/ganapath.jpg')}}" alt="tulip-3">
+            <div>
+                <p>Name: <b>Ganapath</b><br>price: <b>350/-</b></p>
+            </div>
+            <div>
+               
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Ganapath">
+                    <input type="hidden" name="price" value="350">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/don3.jpg')}}" alt="tulip-4">
+            <div>
+                <p>Name: <b>Don 3</b><br>price: <b>250/-</b></p>
+            </div>
+            <div>
+               
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Don">
+                    <input type="hidden" name="price" value="250">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/rocky.jpg')}}" alt="tulip-5">
+            <div>
+                <p>Name: <b>Rocky</b><br>price: <b>300/-</b></p>
+            </div>
+            <div>
+               
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Rocky">
+                    <input type="hidden" name="price" value="300">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- item-3-->
+
+
+    <br>
+    <h2 align="center" style="color: black; font-family: cursive;">English</h2>
+    <br>
+    <div class="roses" id="english">
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/b1.webp')}}" alt="bluebelly-1">
+            <div>
+                <p>Name: <b>Avatar: The Way of Water</b><br>price: <b>360/-</b></p>
+            </div>
+            <div>
+                
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Avatar: The Way of Water">
+                    <input type="hidden" name="price" value="360">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/b2.jpg')}}" alt="bluebelly-2">
+            <div>
+                <p>Name: <b>Oppenheimer</b><br>price: <b>250/-</b></p>
+            </div>
+            <div>
+                
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Oppenheimer">
+                    <input type="hidden" name="price" value="250">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/b3.jpg')}}" alt="bluebelly-3">
+            <div>
+                <p>Name: <b>Barbie</b><br>price: <b>200/-</b></p>
+            </div>
+            <div>
+                
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Barbie">
+                    <input type="hidden" name="price" value="200">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/b4.jpg')}}" alt="bluebelly-4">
+            <div>
+                <p>Name: <b>John Wick: Chapter 4</b><br>price: <b>260/-</b></p>
+            </div>
+            <div>
+               
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="John Wick: Chapter 4">
+                    <input type="hidden" name="price" value="260">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/b5.webp')}}" alt="bluebelly-5">
+            <div>
+                <p>Name: <b>Dune: Part Two</b><br>price: <b>350/-</b></p>
+            </div>
+            <div>
+               
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Dune: Part Two">
+                    <input type="hidden" name="price" value="350">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- item-4-->
+
+
+    <br>
+    <h2 align="center" style="color: black; font-family: cursive;">Tamil</h2>
+    <br>
+    <div class="roses" id="tamil">
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/leo.jpg')}}" alt="artichoke-1">
+            <div>
+                <p>Name: <b>Leo</b><br>price: <b>275/-</b></p>
+            </div>
+            <div>
+                
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Leo">
+                    <input type="hidden" name="price" value="275">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/vendhu.jpg')}}" alt="artichoke-2">
+            <div>
+                <p>Name: <b>Vendhu Thanindhathu Kaadu</b><br>price: <b>300/-</b></p>
+            </div>
+            <div>
+                
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Vendhu Thanindhathu Kaadu">
+                    <input type="hidden" name="price" value="300">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/suriya.jpg')}}" alt="artichoke-3">
+            <div>
+                <p>Name: <b>Suriya's 42</b><br>price: <b>235/-</b></p>
+            </div>
+            <div>
+               
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Suriya's 42">
+                    <input type="hidden" name="price" value="235">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/Michael.jpg')}}" alt="artichoke-4">
+            <div>
+                <p>Name: <b>Micheal</b><br>price: <b>240/-</b></p>
+            </div>
+            <div>
+                
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Micheal">
+                    <input type="hidden" name="price" value="240">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="{{url_for('static',filename='images/kanguva.jpg')}}" alt="artichoke-5">
+            <div>
+                <p>Name: <b>Kanguva</b><br>price: <b>250/-</b></p>
+            </div>
+            <div>
+                
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Kanguva">
+                    <input type="hidden" name="price" value="250">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- item-5-->
+
+
+
+    <br>
+    <h2 align="center" style="color: black; font-family: cursive;">Malayalam</h2>
+    <br>
+    <div class="roses" id="malayalam">
+        <div class="rose-1">
+            <img src="https://timesofindia.indiatimes.com/thumb.cms?msid=107920102&width=200&height=281"
+                alt="marigold-1">
+            <div>
+                <p>Name: <b>Manjumel Boys</b><br>price: <b>150/-</b></p>
+            </div>
+            <div>
+              
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Manjumel Boys">
+                    <input type="hidden" name="price" value="150">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="https://m.media-amazon.com/images/M/MV5BNjJjY2IxMDYtN2U0My00MzFiLWJlYzItYmJkMDg1MTg3MjhmXkEyXkFqcGc@.V1.jpg"
+                alt="marigold-2">
+            <div>
+                <p>Name: <b>Aavesham</b><br>price: <b>270/-</b></p>
+            </div>
+            <div>
+               
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Aavesham">
+                    <input type="hidden" name="price" value="270">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="https://m.media-amazon.com/images/M/MV5BY2Q2YzEzNGUtZWYxYS00YTlhLTgyOTctYTgwNWIxZGE0MDJjXkEyXkFqcGc@.V1.jpg"
+                alt="marigold-3">
+            <div>
+                <p>Name: <b>Premalu</b><br>price: <b>235/-</b></p>
+            </div>
+            <div>
+               
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Premalu">
+                    <input type="hidden" name="price" value="235">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="https://m.media-amazon.com/images/M/MV5BOTdiZjI3OGYtZTk1YS00Mjk5LTlmYzktODQ4NDQyM2JjNmI3XkEyXkFqcGc@.V1.jpg"
+                alt="marigold-4">
+            <div>
+                <p>Name: <b>ARM</b><br>price: <b>240/-</b></p>
+            </div>
+            <div>
+                
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="ARM">
+                    <input type="hidden" name="price" value="240">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="https://m.media-amazon.com/images/M/MV5BNDEwZDMzMDUtMTU1Ny00YjU1LTg2ODctM2E4NTdjM2ExNTk5XkEyXkFqcGc@.V1.jpg"
+                alt="marigold-5">
+            <div>
+                <p>Name: <b>Vaazha</b><br>price: <b>100/-</b></p>
+            </div>
+            <div>
+                
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Vaazha">
+                    <input type="hidden" name="price" value="100">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- item-6-->
+
+
+
+    <br>
+    <h2 align="center" style="color: black; font-family: cursive;">Kannada</h2>
+    <br>
+    <div class="roses" id="kannada">
+        <div class="rose-1">
+            <img src="https://i.pinimg.com/736x/33/fd/64/33fd649a5f93fa4110340202a9645d4b.jpg" alt="sunflower-1">
+            <div>
+                <p>Name: <b>KGF</b><br>price: <b>300/-</b></p>
+            </div>
+            <div>
+              
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="KGF">
+                    <input type="hidden" name="price" value="300">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="https://w0.peakpx.com/wallpaper/864/864/HD-wallpaper-kantara-movie-movie-poster-rishab-shetty.jpg"
+                alt="sunflower-2">
+            <div>
+                <p>Name: <b>Kantara</b><br>price: <b>270/-</b></p>
+            </div>
+            <div>
+              
+
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Kantara">
+                    <input type="hidden" name="price" value="270">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="https://gallery.123telugu.com/content/slideshows/2024/9/UI18/images/image.jpg" alt="sunflower-3">
+            <div>
+                <p>Name: <b>UI</b><br>price: <b>350/-</b></p>
+            </div>
+            <div>
+               
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="UI">
+                    <input type="hidden" name="price" value="350">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC/et00354683-xrcduwdpen-portrait.jpg"
+                alt="sunflower-4">
+            <div>
+                <p>Name: <b>Ranagal</b><br>price: <b>250/-</b></p>
+            </div>
+            <div>
+               
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Ranagal">
+                    <input type="hidden" name="price" value="250">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+        <div class="rose-1">
+            <img src="https://m.media-amazon.com/images/M/MV5BZDExMmNmMTgtNWU3MS00YzFkLWIwMjMtZmJlMmE3YTI0ZDBmXkEyXkFqcGc@.V1_FMjpg_UX1000.jpg"
+                alt="sunflower-5">
+            <div>
+                <p>Name: <b>Salaar</b><br>price: <b>370/-</b></p>
+            </div>
+            <div>
+               
+                <form action="{{ url_for('seats') }}" method="POST">
+                    <input type="hidden" name="movie_name" value="Salaar">
+                    <input type="hidden" name="price" value="370">
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

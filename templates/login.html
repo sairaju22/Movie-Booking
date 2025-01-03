@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- <link rel="stylesheet" href="login.css"> -->
+     <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='images/logo.jpeg')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/signup.css')}}">
+</head>
+<body>
+    <div class="navbar">
+        <div><a href="{{'home'}}">Home</a></div>
+        <div><a href="{{'login'}}" target="_self">Login</a></div>
+        <div class="signup"><a href="{{'signup'}}">Sign Up</a></div>
+    </div>
+    <div class="a">
+        <h1>Welcome to Movie Booking</h1><br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Please login to dive into our ticket booking</p>
+        <div class="card mx-auto" style="max-width: 400px;">
+          <form method="POST" action="{{ url_for('login') }}">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <div class="register-link text-center mt-3">
+              <p>Don't you have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+            </div>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      </body>
+</body>
+</html>
+</body>
+</html>

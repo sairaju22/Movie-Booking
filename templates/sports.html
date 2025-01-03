@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sports.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Upcoming Sports Events</h1>
+        <div class="nav-right">
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+    </header>
+
+    <section id="sports" class="section">
+        <div class="container">
+            <h2>Stay updated on sports matches and activities</h2>
+            <div class="sports-container">
+                <!-- Sport 1 - Soccer Match -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/3684122/pexels-photo-3684122.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Soccer Match">
+                    <div>
+                        <p>Name: <b>Soccer Match</b></p>
+                        <p>Details: <b>Witness the excitement of a live soccer game, as top teams compete for glory!</b></p>
+                        <p class="price">₹ 1100 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Sport 2 - Basketball Tournament -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/3755448/pexels-photo-3755448.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Basketball Tournament">
+                    <div>
+                        <p>Name: <b>Basketball Tournament</b></p>
+                        <p>Details: <b>Get ready for an action-packed basketball tournament with top teams!</b></p>
+                        <p class="price">₹ 1250 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Sport 3 - Tennis Championship -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/5741293/pexels-photo-5741293.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Tennis Championship">
+                    <div>
+                        <p>Name: <b>Tennis Championship</b></p>
+                        <p>Details: <b>Experience world-class tennis as athletes face off in an intense championship match.</b></p>
+                        <p class="price">₹ 1370 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Sport 4 - Rugby Match -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/3624737/pexels-photo-3624737.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Rugby Match">
+                    <div>
+                        <p>Name: <b>Rugby Match</b></p>
+                        <p>Details: <b>Feel the adrenaline rush as top teams go head-to-head in a high-contact game.</b></p>
+                        <p class="price">₹ 1500 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Sport 5 - Volleyball Tournament -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/6203570/pexels-photo-6203570.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Volleyball Tournament">
+                    <div>
+                        <p>Name: <b>Volleyball Tournament</b></p>
+                        <p>Details: <b>Join us for an exciting volleyball tournament with teams from around the world!</b></p>
+                        <p class="price">₹ 1340 onwards</p>
+                    </div>
+                </div>
+
+                <!-- Sport 6 - Cricket Match -->
+                <div class="sport-card">
+                    <img src="https://images.pexels.com/photos/2799556/pexels-photo-2799556.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Cricket Match">
+                    <div>
+                        <p>Name: <b>Cricket Match</b></p>
+                        <p>Details: <b>Witness the drama and excitement of a live cricket match with top players!</b></p>
+                        <p class="price">₹ 2000 onwards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

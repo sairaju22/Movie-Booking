@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/events.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1 class="bold-title">Upcoming Events</h1>
+        <div class="nav-right">
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+    </header>
+    
+
+    <section id="events" class="section">
+        <div class="container">
+            <h2>Check out exciting events happening near you</h2>
+    
+            <!-- Add the events-container class with flexbox styles -->
+            <div class="events-container">
+                <!-- Event 1 - Music Festival -->
+                <div class="event-card">
+                    <img src="https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Music Festival">
+                    <div class="event-details">
+                        <h2>Music Festival</h2>
+                        <p>Join the best music festival in town.</p>
+                        <p class="price">₹ 1200 onwards</p>
+                        
+                        
+                    </div>
+                </div>
+    
+                <!-- Event 2 - Comedy Show -->
+                <div class="event-card">
+                    <img src="https://images.pexels.com/photos/3071456/pexels-photo-3071456.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Comedy Show">
+                    <div class="event-details">
+                        <h2>Comedy Show</h2>
+                        <p> Laugh your heart out at this hilarious comedy event! Featuring some of the most talented comedians, this show promises an unforgettable night of wit, humor, and belly-aching laughter. Whether you're a fan of stand-up, improvisation, or observational comedy, this event has something for everyone. Perfect for a night out with friends or family, the Comedy Show guarantees to leave you in high spirits and grinning from ear to ear. Don't miss this opportunity to unwind and enjoy an evening full of fun and entertainment!</p>
+                        <p class="price">₹ 300 onwards</p>
+                    </div>
+                </div>
+    
+                <!-- Event 3 - Art Exhibition -->
+                <div class="event-card">
+                    <img src="https://images.pexels.com/photos/13473853/pexels-photo-13473853.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Art Exhibition">
+                    <div class="event-details">
+                        <h2>Art Exhibition</h2>
+                        <p>Experience beautiful works of art from talented artists.</p>
+                        <p class="price">₹ 650 onwards</p>
+                    </div>
+                </div>
+    
+                <!-- Event 4 - Dance Show -->
+                <div class="event-card">
+                    <img src="https://images.pexels.com/photos/175658/pexels-photo-175658.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Dance Show">
+                    <div class="event-details">
+                        <h2>Dance Show</h2>
+                        <p>Experience the rhythm, energy, and artistry at our mesmerizing Dance Show!</p>
+                        <p class="price">₹ 700 onwards</p>
+                    </div>
+                </div>
+    
+                <!-- Event 5 - Food Festival -->
+                <div class="event-card">
+                    <img src="https://images.pexels.com/photos/5778895/pexels-photo-5778895.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Food Festival">
+                    <div class="event-details">
+                        <h2>Food Festival</h2>
+                        <p>Indulge in the best cuisines from around the world!</p>
+                        <p class="price">₹ 840 onwards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

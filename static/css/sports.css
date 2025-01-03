@@ -1,0 +1,98 @@
+body {
+    background-image: url('/static/images/sports.webp');
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    /* background-position: center center; Centers the image */
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative; /* This allows the nav-right button to be positioned absolutely inside the header */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.sports-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.sport-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.sport-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sport-card div {
+    padding: 1rem;
+}
+
+.sport-card p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.sport-card form {
+    margin-top: 1rem;
+}
+
+.sport-card input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sport-card input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Styles for the top-right home button */
+.nav-right {
+    position: absolute; /* Position it absolutely within the header */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: #fff; /* Text color for the link */
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ff5722; /* Orange background for the button */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for the home button */
+.nav-right a:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+    color: white;
+}

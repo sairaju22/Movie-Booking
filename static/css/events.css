@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+    background-image: url('/static/images/contactus.avif');
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    /* background-position: center center; Centers the image */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Events Section */
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.event-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+.event-card img {
+    width: 100%;
+    height: auto;
+}
+
+.event-details {
+    padding: 1rem;
+}
+
+.event-details h2 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.event-details p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.event-details form {
+    margin-top: 1rem;
+}
+
+.event-details input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.event-details input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+
+/* Style for the header */
+header {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Style for the title */
+.bold-title {
+    font-weight: bold; /* Makes the text bold */
+    font-size: 2em; /* You can adjust the size to your preference */
+    color: #333; /* Optional: Adjust text color */
+}
+
+/* Style for the "Home" link container */
+.nav-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Style for the "Home" link */
+.nav-right a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ff5722; /* Orange background */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Change color when hovering over the "Home" link */
+.nav-right a:hover {
+    background-color: #e64a19; /* Darker orange */
+    color: white;
+}
