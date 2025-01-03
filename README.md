@@ -1,4 +1,4 @@
-# MovieBooking Application
+# MovieBooking Application by using Flask
 
 The **MovieBooking** application is a web-based system for booking tickets for movies, plays, events, activities, and sports. It features user registration, login, seat selection, Razorpay integration for payments, and an admin dashboard.
 
