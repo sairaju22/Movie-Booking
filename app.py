@@ -9,8 +9,8 @@ app = Flask(__name__)
 app.secret_key = 'qwertyu'  
 
 # Razorpay credentials
-RAZORPAY_KEY_ID = 'rzp_test_aM892uPmKeLaL6'
-RAZORPAY_KEY_SECRET = 'GJgCFKxPv49TBxEp5sn08aRt'
+RAZORPAY_KEY_ID = 'your id detals'
+RAZORPAY_KEY_SECRET = 'your key details'
 client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
 
 # Database configuration
